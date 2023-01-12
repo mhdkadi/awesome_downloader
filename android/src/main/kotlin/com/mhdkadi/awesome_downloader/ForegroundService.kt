@@ -7,7 +7,7 @@ import android.os.Build
 import android.os.IBinder
 
 class ForegroundService : Service() {
-    private val notificationService=NotificationService();
+    private val notificationService=NotificationService()
     override fun onBind(intent: Intent): IBinder? {
         return null
     }

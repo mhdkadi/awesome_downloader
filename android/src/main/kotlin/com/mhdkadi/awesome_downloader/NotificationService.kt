@@ -12,15 +12,15 @@ import androidx.core.app.NotificationCompat
 
 class NotificationService {
     @RequiresApi(Build.VERSION_CODES.Q)
-    public fun createNotificationChannel(notificationManager: NotificationManager){
+     fun createNotificationChannel(notificationManager: NotificationManager){
         val foregroundChannel =NotificationChannel(
             Constants.FOREGROUND_NOTIFICATION_CHANNEL_ID,
             "Foreground Service",
             NotificationManager.IMPORTANCE_HIGH
-        );
-        notificationManager.createNotificationChannel(foregroundChannel);
+        )
+        notificationManager.createNotificationChannel(foregroundChannel)
     }
-    public fun createNotification(
+     fun createNotification(
         context: Context
     ): NotificationCompat.Builder {
         val flag =

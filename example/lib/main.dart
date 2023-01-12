@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:awesome_downloader/awesome_downloader.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
+  final String _platformVersion = 'Unknown';
   final _awesomeDownloaderPlugin = AwesomeDownloader();
 
   @override
@@ -25,10 +24,7 @@ class _MyAppState extends State<MyApp> {
     initPlatformState();
   }
 
-  Future<void> initPlatformState() async {
-
-
-  }
+  Future<void> initPlatformState() async {}
 
   @override
   Widget build(BuildContext context) {

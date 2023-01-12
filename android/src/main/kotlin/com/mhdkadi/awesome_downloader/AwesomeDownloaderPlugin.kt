@@ -23,7 +23,7 @@ class AwesomeDownloaderPlugin: FlutterPlugin, MethodCallHandler {
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     this.channel = MethodChannel(flutterPluginBinding.binaryMessenger, "awesome_downloader")
-    this.context = flutterPluginBinding.applicationContext;
+    this.context = flutterPluginBinding.applicationContext
     this.channel.setMethodCallHandler(this)
   }
 
@@ -33,7 +33,7 @@ class AwesomeDownloaderPlugin: FlutterPlugin, MethodCallHandler {
     val serviceIntent = Intent(context, ForegroundService::class.java)
     if (method.equals("startBackgroundService")) {
       ContextCompat.startForegroundService(context, serviceIntent)
-      result.success("Android startBackgroundService");
+      result.success("Android startBackgroundService")
     } else if (method.equals("stopService")) {
       context.stopService(serviceIntent)
       result.success("Android stopService")
@@ -41,7 +41,7 @@ class AwesomeDownloaderPlugin: FlutterPlugin, MethodCallHandler {
       val downloadTask =DownloadTask(arg)
       result.success("Android download")
     } else {
-      result.notImplemented();
+      result.notImplemented()
     }
   }
 
